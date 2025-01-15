@@ -5,8 +5,6 @@ import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
 
 const App = () => {
-  const { isSidebarOpen } = useGlobalContext();
-  console.log(isSidebarOpen);
   return (
     <main>
       <Navbar />
