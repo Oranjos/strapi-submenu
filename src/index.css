@@ -302,35 +302,34 @@ nav {
 Hero
 =============== 
 */
-.hero-container{
-  min-height:calc(100vh - 5rem);
-  display; grid;
-  place-items:center;
+.hero-container {
+  min-height: calc(100vh - 5rem);
+  display: grid;
+  place-items: center;
 }
-.hero-center{
-  color:var(--white);
+.hero-center {
+  color: var(--white);
   width: var(--fluid-width);
-  max-width: var(--max-width)
+  max-width: var(--max-width);
 }
-.hero-center h1{
+.hero-center h1 {
   font-size: clamp(3rem, 5vw, 5rem);
   margin-bottom: 1rem;
   font-weight: 700;
-  line-height:1.25;
+  line-height: 1.25;
 }
-.hero-center p{
-  line-height: 1.5
+.hero-center p {
+  line-height: 1.5;
 }
-
-@media screen and (min-width: 992px){
-  .hero-center{
+@media screen and (min-width: 992px) {
+  .hero-center {
     text-align: center;
   }
-  .hero-center p{
+  .hero-center p {
     max-width: 35em;
-    margin: 0 auto
+    margin: 0 auto;
   }
-  .toggle-btn{
+  .toggle-btn {
     display: none;
   }
 }
@@ -339,29 +338,29 @@ Hero
 Sidebar
 =============== 
 */
-.sidebar{
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   background: var(--white);
   /* toggle */
   opacity: 0;
   visibility: hidden;
 }
-/* toogle class */
-.show-sidebar{
+.show-sidebar {
   opacity: 1;
   visibility: visible;
   transition-property: opacity;
   transition-duration: 1s;
 }
-.sidebar-container{
-  padding: 4rem  2rem;
+/* toggle class */
+.sidebar-container {
+  padding: 4rem 2rem;
   position: relative;
 }
-.close-btn{
+.close-btn {
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
@@ -369,21 +368,21 @@ Sidebar
   position: absolute;
   top: 1rem;
   right: 1rem;
-  cursor:pointer;
+  cursor: pointer;
 }
-.sidebar article{
-  margin-bottom:2rem;
+.sidebar article {
+  margin-bottom: 2rem;
 }
-.sidebar h4{
+.sidebar h4 {
   margin-bottom: 1rem;
-  color: var(--primary-700)
+  color: var(--primary-700);
 }
-.sidebar-sublinks{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+.sidebar-sublinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   row-gap: 0.5rem;
 }
-.sidebar-sublinks a{
+.sidebar-sublinks a {
   display: block;
   color: var(--grey-900);
   text-transform: capitalize;
@@ -391,11 +390,11 @@ Sidebar
   align-items: center;
   gap: 1rem;
 }
-.sidebar-sublinks svg{
-  color: var(--grey-500)
+.sidebar-sublinks svg {
+  color: var(--grey-500);
 }
-@media screen and (min-width:992px){
-  .sidebar{
+@media screen and (min-width: 992px) {
+  .sidebar {
     display: none;
   }
 }
@@ -404,21 +403,21 @@ Sidebar
 Nav Links
 =============== 
 */
-.nav-links{
+.nav-links {
   display: none;
 }
-@media screen and (min-width:992px){
-  .nav-links{
+@media screen and (min-width: 992px) {
+  .nav-links {
     display: flex;
     justify-content: center;
-    border: 2px solid red;
+    align-self: stretch;
   }
-  .nav-center{
-    display:grid;
+  .nav-center {
+    align-self: stretch;
+    display: grid;
     grid-template-columns: auto 1fr;
-    border: 2px solid green;
   }
-  .nav-link{
+  .nav-link {
     padding: 0 1rem;
     color: var(--white);
     background: transparent;
@@ -427,7 +426,58 @@ Nav Links
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
     cursor: pointer;
-    border: 2px solid blue;
-
+  }
+}
+/* 
+============= 
+Submenu
+=============== 
+*/
+.submenu {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .submenu {
+    display: block;
+    position: fixed;
+    top: 6rem;
+    left: 50%;
+    width: var(--fluid-width);
+    max-width: var(--max-width);
+    background: var(--white);
+    padding: 2rem;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top;
+    perspective: 1000px;
+    border-radius: var(--borderRadius);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    z-index: -1;
+  }
+  .show-submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: rotateX(0deg) translateX(-50%);
+    z-index: 10;
+  }
+  .submenu h5 {
+    margin-bottom: 1rem;
+    color: var(--primary-700);
+  }
+  .submenu-links {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+  .submenu-links a {
+    display: block;
+    color: var(--grey-900);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .submenu-links svg {
+    color: var(--grey-500);
   }
 }
